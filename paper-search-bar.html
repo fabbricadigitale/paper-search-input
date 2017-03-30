@@ -1,0 +1,80 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-input/iron-input.html">
+<link rel="import" href="./paper-search-icons.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-input/paper-input-container.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../iron-behaviors/iron-button-state.html">
+<link rel="import" href="../iron-behaviors/iron-control-state.html">
+<link rel="import" href="../paper-styles/paper-styles.html">
+
+<!--
+
+@element paper-search-bar
+@demo demo/index.html
+-->
+<dom-module id="paper-search-bar">
+    <template>
+        <style>
+             :host {
+                outline: 0;
+                height: 44px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                border: 1px solid red;
+                @apply --layout-flex-auto;
+                /*background-color: var(--paper-search-bar-color-unfocused);*/
+            }
+
+            .input-content {
+                display: flex;
+                height: 100%;
+                padding-top: 2px;
+                @apply --layout-flex-auto;
+                @apply --input-search-container;
+            }
+
+            paper-input {
+                --paper-input-container-underline: {
+                    display: none;
+                }
+                ;
+                --paper-input-container-underline-focus: {
+                    display: none;
+                }
+                ;
+                --paper-input-container-underline-disabled: {
+                    display: none;
+                }
+                ;
+            }
+
+            paper-input {
+                width: 100%;
+            }
+
+            [prefix],
+            [suffix] {
+                flex: none;
+            }
+        </style>
+
+        <div class="input-content">
+            <paper-icon-button id="search" prefix icon="paper-search-icons:search"></paper-icon-button>
+
+            <paper-input no-label-float value="{{query}}" placeholder="[[placeholder]]"></paper-input>
+            <dom-if if="[[query]]">
+                <template>
+                    <paper-icon-button id="clear" suffix on-tap="_clear" icon="paper-search-icons:clear" tabindex="-1"></paper-icon-button>
+                </template>
+            </dom-if>
+        </div>
+
+    </template>
+    <script src="scripts/paper-search-bar.js">
+
+    </script>
+</dom-module>
