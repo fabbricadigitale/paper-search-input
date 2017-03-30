@@ -1,0 +1,42 @@
+{
+  "name": "paper-search-bar",
+  "description": "paper-search-bar",
+  "main": "paper-search-bar.html",
+  "repository": {
+    "type": "git",
+    "url": "git@ssh.gitlab.fabbricadigitale.it:a.labella/paper-search-bar.git"
+  },
+  "keywords": [
+    "Polymer",
+    "DnaPhone",
+    "fabbricadigitale"
+  ],
+  "authors": [
+    "alessandro la bella [fabbricadigitale]"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "polymer": "polymer/polymer#2.0-preview",
+    "iron-behaviors": "polymerelements/iron-behaviors#2.0-preview",
+    "iron-flex-layout": "polymerelements/iron-flex-layout#2.0-preview"
+  },
+  "devDependencies": {
+    "web-component-tester": "v6.0.0-prerelease.5",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#v1",
+    "iron-component-page": "PolymerElements/iron-component-page#2.0-preview",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview",
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "shadycss": "master",
+    "polymer": "^2.0.0-rc.1"
+  }
+}
