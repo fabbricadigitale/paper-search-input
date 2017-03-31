@@ -9,6 +9,7 @@
 <link rel="import" href="../iron-behaviors/iron-button-state.html">
 <link rel="import" href="../iron-behaviors/iron-control-state.html">
 <link rel="import" href="../paper-styles/paper-styles.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
 
 <!--
 
@@ -20,19 +21,61 @@
         <style>
              :host {
                 outline: 0;
-                height: 44px;
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 24px;
-                border: 1px solid red;
-                @apply --layout-flex-auto;
-                /*background-color: var(--paper-search-bar-color-unfocused);*/
+                --paper-search-bc: {
+                    background-color: dodgerblue;
+                };
             }
 
-            .input-content {
+             :host(*:not([fullbleed])) {
+                -webkit-transition: background-color .1s ease-in;
+                transition: background-color .1s ease-in;
+                @apply --paper-search-bc;
+                @apply --layout-flex-auto;
+            }
+
+             :host(*:not([fullbleed])) #search {
+                display: inline-block;
+            }
+
+             :host([fullbleed]) {
+                @apply --layout-fit;
+                -webkit-transition: background-color .2s ease-in;
+                transition: background-color .2s ease-in;
+                background-color: white;
+                align-items: center;
+            }
+
+             :host([fullbleed]) #search {
+                display: none;
+            }
+
+             :host([focused])  {
+                -webkit-transition: background-color .2s ease-in;
+                transition: background-color .2s ease-in;
+                background-color: white;
+            }
+
+             :host(*:not([focused])) {
+                -webkit-transition: background-color .2s ease-out;
+                transition: background-color .2s ease-out;
+               /* background-color: inherit;*/
+            }
+
+             :host(*:not([wide-layout])) {
+                -webkit-transition: background-color .2s ease-out;
+                transition: background-color .2s ease-out;
+            }
+
+            div[content] {
                 display: flex;
                 height: 100%;
-                padding-top: 2px;
+                align-items: center;
+            }
+
+            div[wide-layout] {
                 @apply --layout-flex-auto;
                 @apply --input-search-container;
             }
@@ -60,15 +103,29 @@
             [suffix] {
                 flex: none;
             }
+
+            [hidden] {
+                @apply --layout-invisible;
+            }
         </style>
 
-        <div class="input-content">
-            <paper-icon-button id="search" prefix icon="paper-search-icons:search"></paper-icon-button>
+        <iron-media-query query="(min-width: 600px)" query-matches="{{wide}}"></iron-media-query>
 
-            <paper-input no-label-float value="{{query}}" placeholder="[[placeholder]]"></paper-input>
-            <dom-if if="[[query]]">
+        <div content wide-layout$="[[wide]]">
+
+
+            <paper-icon-button id="search" prefix icon="paper-search-icons:search" on-tap="_activeSearch" tabindex="-1"></paper-icon-button>
+
+            <dom-if if="[[fullbleed]]">
                 <template>
-                    <paper-icon-button id="clear" suffix on-tap="_clear" icon="paper-search-icons:clear" tabindex="-1"></paper-icon-button>
+                    <paper-icon-button id="back" prefix icon="paper-search-icons:back" on-tap="_deactiveSearch" tabindex="-1"></paper-icon-button>
+                </template>
+            </dom-if>
+
+            <dom-if if="[[_showInput]]">
+                <template>
+                    <paper-input id="input" no-label-float value="{{query}}" placeholder="[[placeholder]]"></paper-input>
+                    <paper-icon-button hidden$="[[!query]]" id="clear" suffix on-tap="_clear" icon="paper-search-icons:clear" tabindex="-1"></paper-icon-button>
                 </template>
             </dom-if>
         </div>
