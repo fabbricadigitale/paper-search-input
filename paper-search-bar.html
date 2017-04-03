@@ -93,6 +93,7 @@ Include `paper-search-bar` into your app-toolbar
             }
 
             paper-input {
+                padding-left: 24px;
                 --paper-input-container-underline: {
                     display: none;
                 }
@@ -118,6 +119,13 @@ Include `paper-search-bar` into your app-toolbar
 
             [hidden] {
                 @apply --layout-invisible;
+            }
+
+            #clear {
+                margin-right: 8px;
+            }
+            #search, #back {
+                margin-left: 8px;
             }
         </style>
 
