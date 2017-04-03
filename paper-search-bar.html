@@ -36,10 +36,10 @@ Include `paper-search-bar` into your app-toolbar
                 outline: 0;
                 @apply --paper-font-title;
                 --paper-search-bc: {
-                    background-color:  var(--paper-search-bar-background-color, var(--paper-grey-200));
+                    background-color:  var(--paper-search-bar-bc, var(--paper-grey-200));
                 };
                 --paper-search-bc-focused: {
-                    background-color:  var(--paper-chip-background-color-focused, white);
+                    background-color:  var(--paper-search-bar-bc-focused, white);
                 };
             }
 
@@ -103,6 +103,9 @@ Include `paper-search-bar` into your app-toolbar
                     display: none;
                 }
                 ;
+
+                --paper-input-container-input-color: var(--paper-search-bar-text-color, --paper-grey-400);
+                --paper-input-container-color: var(--paper-search-bar-placeholder-text-color, --paper-grey-200);
             }
 
             paper-input {
