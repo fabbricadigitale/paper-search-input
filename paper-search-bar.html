@@ -34,6 +34,8 @@ Include `paper-search-bar` into your app-toolbar
         <style>
              :host {
                 outline: 0;
+                border-radius: 5px;
+                border: 1px solid rgba(255,255,255,0.01);
                 @apply --paper-font-title;
                 --paper-search-bc: {
                     background-color:  var(--paper-search-bar-bc, rgba(255,255,255,0.16));
@@ -104,11 +106,11 @@ Include `paper-search-bar` into your app-toolbar
                 }
                 ;
 
-                --paper-input-container-input-color: var(--paper-search-bar-text-color-light, --paper-grey-400);
-                --paper-input-container-color: var(--paper-search-bar-placeholder-text-color, --paper-grey-200);
+                --paper-input-container-input-color: var(--paper-search-bar-text-color-light, --paper-grey-100);
+                --paper-input-container-color: var(--paper-search-bar-placeholder-text-color, --paper-grey-100);
             }
 
-            :host([focused]) {
+            paper-input[focused] {
                 --paper-input-container-input-color: var(--paper-search-bar-text-color, --paper-grey-400);
             }
 
