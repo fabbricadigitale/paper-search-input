@@ -38,16 +38,23 @@ Include `paper-search-bar` into your app-toolbar
                 font-weight: 400;
                 line-height: 24px;
                 --paper-search-bc: {
-                    background-color: dodgerblue;
-                }
-                ;
+                    background-color: deepskyblue;
+                };
+
+                --paper-search-bc-focused: {
+                    background-color: white;
+                };
             }
 
              :host(*:not([fullbleed])) {
                 /* -webkit-transition: background-color .2s ease;
                 transition: background-color .2s ease; Note: There is no transition to avoid paper-input blinking*/
-                @apply --paper-search-bc;
+                /*@apply --paper-search-bc;*/
                 @apply --layout-flex-auto;
+            }
+
+            :host([wide]:not([fullbleed])) {
+                @apply --paper-search-bc;
             }
 
              :host(*:not([fullbleed])) #search {
@@ -60,7 +67,7 @@ Include `paper-search-bar` into your app-toolbar
                 @apply --layout-fit;
                 -webkit-transition: background-color .2s ease-in;
                 transition: background-color .2s ease-in;
-                background-color: white;
+                @apply --paper-search-bc-focused;
                 align-items: center;
             }
 
@@ -71,7 +78,7 @@ Include `paper-search-bar` into your app-toolbar
              :host([focused][wide]) {
                 -webkit-transition: background-color .2s ease-in;
                 transition: background-color .2s ease-in;
-                background-color: white;
+                @apply --paper-search-bc-focused;
             }
 
             div[content] {
