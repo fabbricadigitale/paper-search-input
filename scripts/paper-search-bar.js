@@ -37,7 +37,8 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
       wide: {
         type: Boolean,
         value: false,
-        observer: "_whenWideChanged"
+        observer: "_whenWideChanged",
+        reflectToAttribute: true
       },
 
       _showInput: {
@@ -90,6 +91,7 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
   }
 
   _whenWideChanged(wide) {
+    if(!wide && this.query) this.fullbleed = true
     if(wide) this.fullbleed = false
   }
 
