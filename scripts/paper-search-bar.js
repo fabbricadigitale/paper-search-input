@@ -22,11 +22,9 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
         value: 'Search'
       },
 
-      collapseView: {
-        type: Boolean,
-        value: false
-      },
-
+      /**
+       * Enabled when you are searching in not wide view
+       */
       fullbleed: {
         type: Boolean,
         value: false,
@@ -34,6 +32,9 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
         observer: "_whenFullbleedChanged"
       },
 
+      /**
+       * Desktop view mode
+       */
       wide: {
         type: Boolean,
         value: false,
