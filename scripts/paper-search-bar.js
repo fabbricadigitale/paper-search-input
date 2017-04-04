@@ -21,7 +21,6 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
         type: String,
         value: 'Search'
       },
-
       /**
        * Enabled when you are searching in not wide view
        */
@@ -31,7 +30,6 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
         reflectToAttribute: true,
         observer: "_whenFullbleedChanged"
       },
-
       /**
        * Desktop view mode
        */
@@ -52,7 +50,6 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
         type: Boolean,
         value: true
       }
-
     }
   }
 
@@ -61,15 +58,13 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
   }
 
   _clear() {
-    this.query = ''
+    this.query = undefined
   }
 
   _activeSearch(evt) {
     if(this.wide) {
-      console.log("Wide view")
     }
     if(!this.wide) {
-      console.log("Collapse view")
       this.fullbleed = true;
     }
   }

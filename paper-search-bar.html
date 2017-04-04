@@ -9,6 +9,7 @@
 <link rel="import" href="../iron-behaviors/iron-button-state.html">
 <link rel="import" href="../iron-behaviors/iron-control-state.html">
 <link rel="import" href="../paper-styles/paper-styles.html">
+<link rel="import" href="../paper-styles/shadow.html">
 <link rel="import" href="../iron-media-query/iron-media-query.html">
 
 <!--
@@ -36,11 +37,13 @@ Include `paper-search-bar` into your app-toolbar
                 outline: 0;
                 @apply --paper-font-title;
                 --paper-search-bc: {
-                    background-color:  var(--paper-search-bar-bc, rgba(255,255,255,0.16));
-                };
+                    background-color: var(--paper-search-bar-bc, rgba(255, 255, 255, 0.16));
+                }
+                ;
                 --paper-search-bc-focused: {
-                    background-color:  var(--paper-search-bar-bc-focused, white);
-                };
+                    background-color: var(--paper-search-bar-bc-focused, white);
+                }
+                ;
             }
 
              :host(*:not([fullbleed])) {
@@ -50,9 +53,9 @@ Include `paper-search-bar` into your app-toolbar
                 @apply --layout-flex-auto;
             }
 
-            :host([wide]:not([fullbleed])) {
+             :host([wide]:not([fullbleed])) {
                 border-radius: 5px;
-                border: 1px solid rgba(255,255,255,0.01);
+                border: 1px solid rgba(255, 255, 255, 0.01);
                 @apply --paper-search-bc;
             }
 
@@ -77,8 +80,10 @@ Include `paper-search-bar` into your app-toolbar
              :host([focused][wide]) {
                 -webkit-transition: background-color .2s ease-in;
                 transition: background-color .2s ease-in;
+                @apply --shadow-elevation-2dp;
                 @apply --paper-search-bc-focused;
             }
+
 
             div[content] {
                 display: flex;
@@ -105,7 +110,6 @@ Include `paper-search-bar` into your app-toolbar
                     display: none;
                 }
                 ;
-
                 --paper-input-container-input-color: var(--paper-search-bar-text-color-light, --paper-grey-100);
                 --paper-input-container-color: var(--paper-search-bar-placeholder-text-color, --paper-grey-100);
             }
@@ -130,7 +134,9 @@ Include `paper-search-bar` into your app-toolbar
             #clear {
                 margin-right: 8px;
             }
-            #search, #back {
+
+            #search,
+            #back {
                 margin-left: 8px;
             }
         </style>
@@ -138,7 +144,6 @@ Include `paper-search-bar` into your app-toolbar
         <iron-media-query query="(min-width: 600px)" query-matches="{{wide}}"></iron-media-query>
 
         <div content wide-layout$="[[wide]]">
-
 
             <paper-icon-button id="search" prefix icon="paper-search-icons:search" on-tap="_activeSearch" tabindex="-1"></paper-icon-button>
 
