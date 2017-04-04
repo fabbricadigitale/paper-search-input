@@ -71,7 +71,8 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
 
   _deactiveSearch(evt) {
     if(!this.wide) {
-      this.fullbleed = false;
+      this.fullbleed = false
+      this.query = undefined
     }
   }
 
