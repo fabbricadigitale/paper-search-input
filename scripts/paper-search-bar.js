@@ -12,7 +12,7 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
       query: {
         type: String,
         notify: true,
-        value: ''
+        value: () => ""
       },
       /**
        * Text shown in the search box if the user didn't enter any query
@@ -58,7 +58,7 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
   }
 
   _clear() {
-    this.query = undefined
+    this.query = ""
   }
 
   _activeSearch(evt) {
@@ -72,7 +72,7 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
   _deactiveSearch(evt) {
     if(!this.wide) {
       this.fullbleed = false
-      this.query = undefined
+      this.query = ""
     }
   }
 
