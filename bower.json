@@ -18,7 +18,7 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "polymer": "polymer/polymer#2.0-preview",
+    "polymer": "^2.0.0-rc.3",
     "iron-behaviors": "polymerelements/iron-behaviors#2.0-preview",
     "iron-flex-layout": "polymerelements/iron-flex-layout#2.0-preview",
     "iron-iconset-svg": "polymerelements/iron-iconset-svg#2.0-preview",
@@ -43,6 +43,6 @@
   ],
   "resolutions": {
     "shadycss": "master",
-    "polymer": "^2.0.0-rc.1"
+    "polymer": "^2.0.0-rc.3"
   }
 }
