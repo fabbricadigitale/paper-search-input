@@ -1,10 +1,10 @@
 {
-  "name": "paper-search-bar",
-  "description": "paper-search-bar",
-  "main": "paper-search-bar.html",
+  "name": "paper-search-input",
+  "description": "paper-search-input",
+  "main": "paper-search-input.html",
   "repository": {
     "type": "git",
-    "url": "git@ssh.gitlab.fabbricadigitale.it:a.labella/paper-search-bar.git"
+    "url": "https://github.com/fabbricadigitale/paper-search-input.git"
   },
   "keywords": [
     "Polymer",

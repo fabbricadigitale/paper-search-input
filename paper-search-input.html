@@ -19,29 +19,29 @@ Search bar to quickly locate content in your app.
 
 ### Examples:
 
-Include `paper-search-bar` into your app-toolbar
+Include `paper-search-input` into your app-toolbar
 
   <app-toolbar>
         <paper-icon-button icon="menu"></paper-icon-button>
         <div main-title>App name</div>
-        <paper-search-bar></paper-search-bar>
+        <paper-search-input></paper-search-input>
   </app-toolbar>
 
-@element paper-search-bar
+@element paper-search-input
 @demo demo/index.html
 -->
-<dom-module id="paper-search-bar">
+<dom-module id="paper-search-input">
     <template>
         <style>
              :host {
                 outline: 0;
                 @apply --paper-font-title;
                 --paper-search-bc: {
-                    background-color: var(--paper-search-bar-bc, rgba(255, 255, 255, 0.16));
+                    background-color: var(--paper-search-input-bc, rgba(255, 255, 255, 0.16));
                 }
                 ;
                 --paper-search-bc-focused: {
-                    background-color: var(--paper-search-bar-bc-focused, white);
+                    background-color: var(--paper-search-input-bc-focused, white);
                 }
                 ;
             }
@@ -110,12 +110,12 @@ Include `paper-search-bar` into your app-toolbar
                     display: none;
                 }
                 ;
-                --paper-input-container-input-color: var(--paper-search-bar-text-color-light, --paper-grey-100);
-                --paper-input-container-color: var(--paper-search-bar-placeholder-text-color, --paper-grey-100);
+                --paper-input-container-input-color: var(--paper-search-input-text-color-light, --paper-grey-100);
+                --paper-input-container-color: var(--paper-search-input-placeholder-text-color, --paper-grey-100);
             }
 
             paper-input[focused] {
-                --paper-input-container-input-color: var(--paper-search-bar-text-color, --paper-grey-400);
+                --paper-input-container-input-color: var(--paper-search-input-text-color, --paper-grey-400);
             }
 
             paper-input {
@@ -162,7 +162,7 @@ Include `paper-search-bar` into your app-toolbar
         </div>
 
     </template>
-    <script src="scripts/paper-search-bar.js">
+    <script src="scripts/paper-search-input.js">
 
     </script>
 </dom-module>

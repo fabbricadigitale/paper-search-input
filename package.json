@@ -1,12 +1,12 @@
 {
-  "name": "paper-search-bar",
+  "name": "paper-search-input",
   "version": "0.1.0",
   "private": true,
-  "description": "paper-search-bar",
-  "main": "paper-search-bar.html",
+  "description": "paper-search-input",
+  "main": "paper-search-input.html",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.fabbricadigitale.it:a.labella/paper-search-bar.git"
+    "url": "https://github.com/fabbricadigitale/paper-search-input.git"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -28,7 +28,7 @@
   "directories": {
     "example": "demo",
     "lib": "bundle",
-    "component": "paper-search-bar",
+    "component": "paper-search-input",
     "deps": "node_modules/@browser"
   },
   "scripts": {

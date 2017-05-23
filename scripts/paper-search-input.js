@@ -1,7 +1,7 @@
-class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Polymer.mixinBehaviors(Polymer.IronButtonState, Polymer.Element)) {
+class PaperSearchInput extends Polymer.mixinBehaviors(Polymer.IronControlState, Polymer.mixinBehaviors(Polymer.IronButtonState, Polymer.Element)) {
 
   static get is() {
-    return "paper-search-bar"
+    return "paper-search-input"
   }
 
   static get properties() {
@@ -93,4 +93,4 @@ class PaperSearchBar extends Polymer.mixinBehaviors(Polymer.IronControlState, Po
   }
 
 }
-customElements.define(PaperSearchBar.is, PaperSearchBar)
+customElements.define(PaperSearchInput.is, PaperSearchInput)
