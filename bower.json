@@ -8,17 +8,12 @@
   },
   "keywords": [
     "Polymer",
-    "DnaPhone",
-    "fabbricadigitale"
-  ],
-  "authors": [
-    "alessandro la bella [fabbricadigitale]"
+    "WebComponents",
+    "Material Design"
   ],
   "license": "MIT",
-  "homepage": "",
-  "private": true,
   "dependencies": {
-    "polymer": "^2.0.0-rc.3",
+    "polymer": "polymer/polymer#^v2.0.0",
     "iron-behaviors": "polymerelements/iron-behaviors#2.0-preview",
     "iron-flex-layout": "polymerelements/iron-flex-layout#2.0-preview",
     "iron-iconset-svg": "polymerelements/iron-iconset-svg#2.0-preview",
@@ -27,22 +22,11 @@
     "paper-input": "polymerelements/paper-input#2.0-preview"
   },
   "devDependencies": {
-    "web-component-tester": "v6.0.0-prerelease.5",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#v1",
+    "web-component-tester": "v6.0.0",
+    "webcomponentsjs":  "webcomponents/webcomponentsjs#^1.0.0",
     "iron-component-page": "PolymerElements/iron-component-page#2.0-preview",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview",
     "iron-icons": "PolymerElements/iron-icons#2.0-preview",
     "app-layout": "polymerelements/app-layout#2.0-preview"
-  },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "resolutions": {
-    "shadycss": "master",
-    "polymer": "^2.0.0-rc.3"
   }
 }
