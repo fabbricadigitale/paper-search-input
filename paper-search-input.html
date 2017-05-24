@@ -15,17 +15,31 @@
 <!--
 Material Design: [Search]:(https://material.io/guidelines/patterns/search.html)
 
-Search bar to quickly locate content in your app.
+`<paper-search-input>` is a single line text field to perform search action with Material Design styling and a dynamic layout.
 
-### Examples:
+## Usage:
 
-Include `paper-search-input` into your app-toolbar
+Include `paper-search-input` into your app-toolbar (desktop layout)
 
+```html
   <app-toolbar>
         <paper-icon-button icon="menu"></paper-icon-button>
         <div main-title>App name</div>
         <paper-search-input></paper-search-input>
   </app-toolbar>
+```
+
+If you want change dinamically from desktop to mobile layout and vice versa you can use a media query.
+
+```html
+    <iron-media-query query="(min-width: 600px)" query-matches="{{layout}}"></iron-media-query>
+    ...
+    <app-toolbar>
+        <paper-icon-button icon="menu"></paper-icon-button>
+        <div main-title>App name</div>
+        <paper-search-input wide="[[layout]]"></paper-search-input>
+    </app-toolbar>
+```
 
 @element paper-search-input
 @demo demo/index.html
